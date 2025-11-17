@@ -7,7 +7,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Manjari:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="/assets/css/main.scss">
     
@@ -15,11 +15,13 @@
 </head>
 <body>
 
-    {{ content }}
+    {% include header.html %}
 
-    <footer class="site-footer">
-        <p>&copy; {{ 'now' | date: "%Y" }} Lélekcsillámpor. Minden jog fenntartva.</p>
-    </footer>
+    <main>
+        {{ content }}
+    </main>
+
+    {% include footer.html %}
 
 </body>
 </html>
