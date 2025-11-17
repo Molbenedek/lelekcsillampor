@@ -1,103 +1,208 @@
+---
+---
 
-/* * Színpaletta a kép alapján
+/* --- 1. VÁLTOZÓK: ÚJ SZÍNVILÁG ÉS BETŰTÍPUSOK --- */
+$color-bg: #fffafc; // Halványrózsaszín háttér
+$color-text: #3d1b22;           // Sötétbordó (szövegnek)
+$color-primary: #9a2a40;       // Sötétbordó (címeknek)
+$color-accent: #e0b841;         // Arany (gomboknak)
+$color-white: #ffffff;
 
- * Világos bézs: #f4eee9
+$font-serif: 'Playfair Display', serif; // Elegáns, talpas
+$font-sans: 'Montserrat', sans-serif;  // Letisztult, talp nélküli
 
-...stb.
-
-*/ 
-
-
-
-/* * Színpaletta a kép alapján
-
- * Világos bézs: #f4eee9
-
-...stb.
-
-*/
-$font-sans: 'Manjari', sans-serif;
-$font-serif: 'Cormorant Garamond', serif;
-
-// --- Globális stílusok ---
-// ...és a többi kód...
-
-// --- Globális stílusok ---
-body {
-    font-family: $font-sans; // Alap betűtípus
-    color: #3b3431;          // Alap szövegszín (a paletta sötétbarnája)
-    background-color: #ffffff; // Fehér háttér
+/* --- 2. GLOBÁLIS ALAPBEÁLLÍTÁSOK --- */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-size: 18px;
+}
+
+body {
+    font-family: $font-sans;
+    background-color: $color-bg;
+    color: $color-text;
     line-height: 1.6;
 }
 
-// --- Konténer a központosításhoz ---
-.page-content {
-    max-width: 1200px;
-    margin: 40px auto; // Térköz a lap tetején/alján és automatikus oldalsó közép
-    padding: 0 20px;   // Kis térköz oldalt
-}
-
-// --- Fejléc stílusok ---
-.home-header {
-    text-align: center; // Középre igazítás
-    margin: 60px 0;
-}
-
-.home-header h1 {
+h1, h2, h3, h4, h5, h6 {
     font-family: $font-serif;
-    font-size: 4.5rem; // Nagy méret, mint a képen
-    font-weight: 600;
-    color: #3b3431;
-    margin: 0;
+    color: $color-primary;
+    margin-bottom: 1rem;
 }
 
-.home-header .tagline {
-    font-family: $font-sans;
-    font-size: 1.2rem;
-    color: #8a786a;
-    margin-top: 10px;
+/* --- 3. A FELSŐ MENÜ (HEADER) --- */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(255, 250, 252, 0.85);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(154, 42, 64, 0.2); // Halvány bordó
 }
 
-// --- Kétoszlopos kép-rács ---
-.hero-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr; // Két egyenlő oszlop
-    gap: 30px; // Térköz a két kép között
-    margin-bottom: 60px;
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
 }
 
-.hero-grid img {
-    width: 100%; // Töltse ki az oszlopát
-    height: auto;
-    display: block; // Megszünteti a képek alatti kis rést
-}
-
-// --- Bemutatkozó szöveg ---
-.intro-text {
-    text-align: center;
-    max-width: 750px; // Ne legyen túl széles a szöveg
-    margin: 0 auto 60px auto; // Középre igazítás
-}
-
-.intro-text h2 {
+.nav-logo .logo-text {
     font-family: $font-serif;
     font-size: 2rem;
-    color: #3b3431;
-    font-weight: 600;
+    color: $color-primary;
+    text-decoration: none;
+    font-weight: 700;
 }
 
-.intro-text p {
-    color: #8a786a;
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
 }
 
-// --- Lábléc ---
+.nav-menu a {
+    text-decoration: none;
+    color: $color-text;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    padding-bottom: 5px;
+}
+.nav-menu a:hover {
+    color: $color-primary;
+    border-bottom: 2px solid $color-accent;
+}
+
+.nav-social a {
+    text-decoration: none;
+    color: $color-text;
+    margin-left: 1rem;
+    font-weight: 700;
+}
+
+/* --- 4. A FŐOLDALI "HERO" SZEKCIÓ --- */
+.hero-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    min-height: 600px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-image-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    // IDE CSERÉLD KI A KÉP ÚTVONALÁT!
+    background-image: url('https://via.placeholder.com/1920x1080.png?text=Mercé+portréja+jön+ide');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2; // Halványítás
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    background-color: rgba(255, 250, 252, 0.6);
+    padding: 2rem 4rem;
+    border-radius: 10px;
+}
+
+.hero-content h1 {
+    font-size: 6rem;
+    color: $color-primary;
+    margin: 0;
+    margin-top: 0; // Felülírja az alap h1 stílust
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    color: $color-text;
+    margin-bottom: 2rem;
+}
+
+.button-primary {
+    display: inline-block;
+    background-color: $color-accent;
+    color: $color-white;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.button-primary:hover {
+    transform: scale(1.05);
+    background-color: #c9a23a; // Kicsit sötétebb arany
+}
+
+/* --- 5. TARTALMI BLOKKOK ÁLTALÁBAN --- */
+.content-block {
+     max-width: 1200px;
+     margin: 100px auto; // Térköz a szekciók között
+     padding: 0 2rem;
+}
+
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+}
+
+.column-text h2 {
+    font-size: 2.5rem;
+}
+
+.column-text li {
+    margin-left: 20px;
+    margin-bottom: 0.5rem;
+}
+
+.column-image img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.button-secondary {
+    display: inline-block;
+    background-color: transparent;
+    border: 2px solid $color-accent;
+    color: $color-primary;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button-secondary:hover {
+    background-color: $color-accent;
+    color: $color-white;
+}
+
+/* --- 6. LÁBLÉC --- */
 .site-footer {
     text-align: center;
     padding: 40px 20px;
-    border-top: 1px solid #e0d5c9; // Halvány elválasztó
-    color: #c4b5a6;
+    border-top: 1px solid rgba(154, 42, 64, 0.1); // Nagyon halvány bordó
+    color: $color-text;
     font-size: 0.9rem;
+    background-color: $color-bg;
 }
