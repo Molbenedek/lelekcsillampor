@@ -1,0 +1,98 @@
+---
+// A Jekyll-nek kellenek a --- jelek
+---
+
+/* Színpaletta a kép alapján:
+   Világos bézs: #f4eee9
+   Közép bézs:   #e0d5c9
+   Taupe:        #c4b5a6
+   Barna:        #8a786a
+   Sötétbarna:   #3b3431
+*/
+
+// --- Betűtípus változók ---
+
+{
+    $font-sans: 'Manjari', sans-serif;
+
+    $font-serif: 'Cormorant Garamond', serif;}
+
+// --- Globális stílusok ---
+body {
+    font-family: $font-sans; // Alap betűtípus
+    color: #3b3431;          // Alap szövegszín (a paletta sötétbarnája)
+    background-color: #ffffff; // Fehér háttér
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+// --- Konténer a központosításhoz ---
+.page-content {
+    max-width: 1200px;
+    margin: 40px auto; // Térköz a lap tetején/alján és automatikus oldalsó közép
+    padding: 0 20px;   // Kis térköz oldalt
+}
+
+// --- Fejléc stílusok ---
+.home-header {
+    text-align: center; // Középre igazítás
+    margin: 60px 0;
+}
+
+.home-header h1 {
+    font-family: $font-serif;
+    font-size: 4.5rem; // Nagy méret, mint a képen
+    font-weight: 600;
+    color: #3b3431;
+    margin: 0;
+}
+
+.home-header .tagline {
+    font-family: $font-sans;
+    font-size: 1.2rem;
+    color: #8a786a;
+    margin-top: 10px;
+}
+
+// --- Kétoszlopos kép-rács ---
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; // Két egyenlő oszlop
+    gap: 30px; // Térköz a két kép között
+    margin-bottom: 60px;
+}
+
+.hero-grid img {
+    width: 100%; // Töltse ki az oszlopát
+    height: auto;
+    display: block; // Megszünteti a képek alatti kis rést
+}
+
+// --- Bemutatkozó szöveg ---
+.intro-text {
+    text-align: center;
+    max-width: 750px; // Ne legyen túl széles a szöveg
+    margin: 0 auto 60px auto; // Középre igazítás
+}
+
+.intro-text h2 {
+    font-family: $font-serif;
+    font-size: 2rem;
+    color: #3b3431;
+    font-weight: 600;
+}
+
+.intro-text p {
+    color: #8a786a;
+}
+
+// --- Lábléc ---
+.site-footer {
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 1px solid #e0d5c9; // Halvány elválasztó
+    color: #c4b5a6;
+    font-size: 0.9rem;
+}
