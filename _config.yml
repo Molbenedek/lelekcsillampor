@@ -1,0 +1,21 @@
+# --- Alap Beállítások ---
+title: Lélekcsillámpor
+email: lelekcsillampor@gmail.com
+description: >-
+  Merci oldala és blogja.
+
+# --- Menü Beállítások ---
+# Innen fogjuk kiolvasni a menüpontokat a header.html-ben
+menu_items:
+  - title: Főoldal
+    url: /
+  - title: Rólam
+    url: /rolam/
+  - title: Szolgáltatások
+    url: /szolgaltatasok/
+  - title: Kapcsolat
+    url: /kapcsolat/
+
+# --- Jekyll Beállítások ---
+plugins:
+  - jekyll-seo-tag
