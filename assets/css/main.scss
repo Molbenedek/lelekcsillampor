@@ -10,7 +10,9 @@ $color-white: #ffffff;
 
 $font-serif: 'Playfair Display', serif; // Elegáns, talpas
 $font-sans: 'Montserrat', sans-serif;  // Letisztult, talp nélküli
-
+main {
+  padding-top: 80px; /* igazítsd a header tényleges magasságához */
+}
 /* --- 2. GLOBÁLIS ALAPBEÁLLÍTÁSOK --- */
 * {
     box-sizing: border-box;
