@@ -1,21 +1,26 @@
----
-// A Jekyll-nek kellenek a --- jelek
----
 
-/* Színpaletta a kép alapján:
-   Világos bézs: #f4eee9
-   Közép bézs:   #e0d5c9
-   Taupe:        #c4b5a6
-   Barna:        #8a786a
-   Sötétbarna:   #3b3431
+/* * Színpaletta a kép alapján
+
+ * Világos bézs: #f4eee9
+
+...stb.
+
+*/ 
+
+
+
+/* * Színpaletta a kép alapján
+
+ * Világos bézs: #f4eee9
+
+...stb.
+
 */
+$font-sans: 'Manjari', sans-serif;
+$font-serif: 'Cormorant Garamond', serif;
 
-// --- Betűtípus változók ---
-
-{
-    $font-sans: 'Manjari', sans-serif;
-
-    $font-serif: 'Cormorant Garamond', serif;}
+// --- Globális stílusok ---
+// ...és a többi kód...
 
 // --- Globális stílusok ---
 body {
