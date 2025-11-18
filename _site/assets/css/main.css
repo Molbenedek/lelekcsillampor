@@ -1,0 +1,261 @@
+@charset "UTF-8";
+/* --- 1. VÁLTOZÓK: ÚJ SZÍNVILÁG ÉS BETŰTÍPUSOK --- */
+main {
+  padding-top: 80px; /* igazítsd a header tényleges magasságához */
+}
+
+/* --- 2. GLOBÁLIS ALAPBEÁLLÍTÁSOK --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #fffafc;
+  color: #3d1b22;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display", serif;
+  color: #9a2a40;
+  margin-bottom: 1rem;
+}
+
+/* --- 3. A FELSŐ MENÜ (HEADER) --- */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(255, 250, 252, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(154, 42, 64, 0.2);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+.nav-logo .logo-text {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  color: #9a2a40;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #3d1b22;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  padding-bottom: 5px;
+}
+
+.nav-menu a:hover {
+  color: #9a2a40;
+  border-bottom: 2px solid #e0b841;
+}
+
+.nav-social a {
+  text-decoration: none;
+  color: #3d1b22;
+  margin-left: 1rem;
+  font-weight: 700;
+}
+
+/* --- 3/b. Lenyíló menü a Szolgáltatásokhoz --- */
+.nav-menu li {
+  position: relative;
+}
+
+.has-dropdown > a {
+  cursor: pointer;
+}
+
+/* Al-menü doboz */
+.dropdown {
+  position: absolute;
+  top: 100%; /* közvetlenül a fő menü alatt */
+  left: 0;
+  background-color: #fffafc;
+  list-style: none;
+  padding: 0.75rem 0;
+  margin: 0;
+  min-width: 220px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  border: 1px solid rgba(154, 42, 64, 0.15);
+  display: none; /* alapból rejtve */
+  z-index: 2000;
+}
+
+/* Lenyílás hoverre */
+.has-dropdown:hover .dropdown {
+  display: block;
+}
+
+/* Al-menü linkek */
+.dropdown li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: #3d1b22;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.dropdown li a:hover {
+  background-color: rgba(154, 42, 64, 0.06);
+  color: #9a2a40;
+}
+
+/* --- 4. A FŐOLDALI "HERO" SZEKCIÓ --- */
+.hero-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  min-height: 600px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-image-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://via.placeholder.com/1920x1080.png?text=Mercé+portréja+jön+ide");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  background-color: rgba(255, 250, 252, 0.6);
+  padding: 2rem 4rem;
+  border-radius: 10px;
+}
+
+.hero-content h1 {
+  font-size: 6rem;
+  color: #9a2a40;
+  margin: 0;
+  margin-top: 0;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  color: #3d1b22;
+  margin-bottom: 2rem;
+}
+
+.button-primary {
+  display: inline-block;
+  background-color: #e0b841;
+  color: #ffffff;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 700;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.button-primary:hover {
+  transform: scale(1.05);
+  background-color: #c9a23a;
+}
+
+/* --- 5. TARTALMI BLOKKOK ÁLTALÁBAN --- */
+.content-block {
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 0 2rem;
+}
+
+.two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 4rem;
+}
+
+.column-text h2 {
+  font-size: 2.5rem;
+}
+
+.column-text li {
+  margin-left: 20px;
+  margin-bottom: 0.5rem;
+}
+
+.column-image img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.button-secondary {
+  display: inline-block;
+  background-color: transparent;
+  border: 2px solid #e0b841;
+  color: #9a2a40;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button-secondary:hover {
+  background-color: #e0b841;
+  color: #ffffff;
+}
+
+/* --- 6. LÁBLÉC --- */
+.site-footer {
+  text-align: center;
+  padding: 40px 20px;
+  border-top: 1px solid rgba(154, 42, 64, 0.1);
+  color: #3d1b22;
+  font-size: 0.9rem;
+  background-color: #fffafc;
+}
+
+.page-header {
+  text-align: left;
+}
+
+.page-header h1 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+
+.page-content {
+  font-size: 1rem;
+}
+
+/*# sourceMappingURL=main.css.map */

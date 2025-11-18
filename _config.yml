@@ -16,6 +16,14 @@ menu_items:
   - title: Kapcsolat
     url: /kapcsolat/
 
+# --- Szolgáltatás al-menü ---
+services_menu:
+  - title: Access Bars
+    url: /szolgaltatasok/access-bars/
+  - title: Masszázs
+    url: /szolgaltatasok/masszazs/
+  - title: Energetikai kezelés
+    url: /szolgaltatasok/energetikai-kezeles/
 # --- Jekyll Beállítások ---
 plugins:
   - jekyll-seo-tag

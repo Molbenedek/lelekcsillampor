@@ -4,10 +4,23 @@
       <span class="logo-text">L</span>
     </a>
     <ul class="nav-menu">
-      {% for item in site.menu_items %}
-        <li><a href="{{ item.url }}">{{ item.title }}</a></li>
-      {% endfor %}
-    </ul>
+  {% for item in site.menu_items %}
+    {% if item.title == "Szolgáltatások" %}
+      <li class="nav-item has-dropdown">
+        <a href="{{ item.url }}">{{ item.title }}</a>
+        <ul class="dropdown">
+          {% for service in site.services_menu %}
+            <li><a href="{{ service.url }}">{{ service.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </li>
+    {% else %}
+      <li class="nav-item">
+        <a href="{{ item.url }}">{{ item.title }}</a>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
     <div class="nav-social">
       <a href="#">(F)</a>
       <a href="#">(I)</a>
